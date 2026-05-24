@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>U.S. Presidents Sprint</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">Memory Game</p>
+      <h1>Name Every U.S. President</h1>
+      <p class="subtitle">Type one name at a time. Near-miss typos are accepted when they are close enough.</p>
+    </header>
+
+    <section class="controls">
+      <form id="guess-form" autocomplete="off">
+        <label for="guess-input">Your guess</label>
+        <div class="input-row">
+          <input
+            id="guess-input"
+            type="text"
+            placeholder="Try: Lincoln"
+            spellcheck="false"
+            aria-describedby="feedback"
+            autofocus
+          >
+          <button type="submit">Add</button>
+        </div>
+      </form>
+      <ul id="suggestions" class="suggestions" aria-label="Suggestions"></ul>
+      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="board">
+      <div class="board-head">
+        <div class="board-stats">
+          <strong id="progress-text">0 / 47 filled</strong>
+          <span id="timer-text" class="timer">00:00</span>
+        </div>
+        <div class="board-actions">
+          <button id="resign-button" type="button">Resign</button>
+          <button id="share-button" type="button">Share</button>
+          <button id="reset-button" type="button">Reset</button>
+        </div>
+      </div>
+      <ol id="president-rows" class="rows"></ol>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
