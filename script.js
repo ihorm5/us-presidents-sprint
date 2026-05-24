@@ -457,6 +457,7 @@ function resignGame() {
 function resetGame() {
   rowElementsByNumber.forEach((rowElement) => {
     rowElement.classList.remove("is-found");
+    rowElement.classList.remove("is-revealed");
     const nameCell = rowElement.querySelector(".row-name");
     if (nameCell) {
       nameCell.textContent = "empty";
@@ -501,7 +502,27 @@ function endGame(nextStatus) {
     return;
   }
 
+  revealRemainingAnswers();
   setFeedback(`You resigned at ${timeText} with ${filledRows}/${TOTAL_ROWS} rows filled.`);
+}
+
+function revealRemainingAnswers() {
+  rowsWithKeys.forEach((row) => {
+    if (state.foundKeys.has(row.key)) {
+      return;
+    }
+
+    const rowElement = rowElementsByNumber.get(row.number);
+    if (!rowElement) {
+      return;
+    }
+
+    rowElement.classList.add("is-revealed");
+    const nameCell = rowElement.querySelector(".row-name");
+    if (nameCell) {
+      nameCell.textContent = row.name;
+    }
+  });
 }
 
 function updateProgress() {

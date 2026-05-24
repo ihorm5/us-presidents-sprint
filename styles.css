@@ -247,6 +247,11 @@ input:disabled {
   font-weight: 700;
 }
 
+.row.is-revealed .row-name {
+  color: var(--muted);
+  font-style: normal;
+}
+
 @media (max-width: 640px) {
   .app-shell {
     width: min(920px, 100% - 1rem);
