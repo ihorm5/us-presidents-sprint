@@ -133,7 +133,15 @@ function handleInput() {
     return;
   }
 
-  const candidates = rankCandidates(query).slice(0, 5);
+  if (query.length < 3) {
+    clearSuggestions();
+    return;
+  }
+
+  const candidates = rankCandidates(query, {
+    maxDistance: 2,
+    allowContains: false
+  }).slice(0, 5);
   renderSuggestions(candidates);
 }
 
@@ -196,7 +204,10 @@ function resolveGuess(rawGuess) {
     };
   }
 
-  const ranked = rankCandidates(normalized);
+  const ranked = rankCandidates(normalized, {
+    maxDistance: fuzzyThreshold(normalized.length),
+    allowContains: true
+  });
   if (ranked.length === 0) {
     return { type: "none" };
   }
@@ -219,7 +230,11 @@ function resolveGuess(rawGuess) {
   return { type: "none" };
 }
 
-function rankCandidates(query) {
+function rankCandidates(query, options = {}) {
+  const {
+    maxDistance = fuzzyThreshold(query.length) + 2,
+    allowContains = true
+  } = options;
   const candidates = [];
 
   for (const person of people.values()) {
@@ -229,7 +244,7 @@ function rankCandidates(query) {
 
     let bestScore = null;
     for (const alias of person.aliases) {
-      const score = scoreAlias(query, alias);
+      const score = scoreAlias(query, alias, { maxDistance, allowContains });
       if (!score) {
         continue;
       }
@@ -266,19 +281,21 @@ function rankCandidates(query) {
   });
 }
 
-function scoreAlias(query, alias) {
+function scoreAlias(query, alias, options = {}) {
   if (query.length < 2) {
     return null;
   }
 
-  const startsWith = alias.startsWith(query);
-  if (startsWith) {
-    return { distance: 0, normalized: 0, startsWith: true };
-  }
+  const {
+    maxDistance = fuzzyThreshold(query.length) + 2,
+    allowContains = true
+  } = options;
 
+  const startsWith = alias.startsWith(query);
   const distance = levenshtein(query, alias);
   const normalized = distance / Math.max(query.length, alias.length);
-  const accepted = distance <= fuzzyThreshold(query.length) + 2 || normalized <= 0.5 || alias.includes(query);
+  const contains = allowContains && alias.includes(query);
+  const accepted = distance <= maxDistance || contains;
 
   if (!accepted) {
     return null;
