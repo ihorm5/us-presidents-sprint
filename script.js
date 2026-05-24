@@ -54,6 +54,7 @@ const GAME_STATUS = Object.freeze({
   won: "won",
   resigned: "resigned"
 });
+const MIN_AUTOCOMPLETE_LASTNAME_LENGTH = 5;
 
 const rowsWithKeys = PRESIDENT_ROWS.map((row) => ({
   ...row,
@@ -126,22 +127,20 @@ function handleInput() {
     return;
   }
 
-  const query = normalizeName(elements.input.value);
-  if (!query) {
+  const normalizedInput = normalizeName(elements.input.value);
+  if (!normalizedInput) {
     clearSuggestions();
     setFeedback("");
     return;
   }
 
-  if (query.length < 3) {
+  const lastNameQuery = extractLastToken(normalizedInput);
+  if (lastNameQuery.length < MIN_AUTOCOMPLETE_LASTNAME_LENGTH) {
     clearSuggestions();
     return;
   }
 
-  const candidates = rankCandidates(query, {
-    maxDistance: 2,
-    allowContains: false
-  }).slice(0, 5);
+  const candidates = rankAutocompleteCandidates(lastNameQuery).slice(0, 5);
   renderSuggestions(candidates);
 }
 
@@ -281,6 +280,51 @@ function rankCandidates(query, options = {}) {
   });
 }
 
+function rankAutocompleteCandidates(lastNameQuery) {
+  const maxDistance = autocompleteDistanceLimit(lastNameQuery.length);
+  const candidates = [];
+
+  for (const person of people.values()) {
+    if (state.foundKeys.has(person.key)) {
+      continue;
+    }
+
+    let bestScore = null;
+    for (const alias of person.aliases) {
+      const score = scoreLastNameAutocomplete(lastNameQuery, alias, maxDistance);
+      if (!score) {
+        continue;
+      }
+      if (!bestScore || compareScores(score, bestScore) < 0) {
+        bestScore = score;
+      }
+    }
+
+    if (!bestScore) {
+      continue;
+    }
+
+    candidates.push({
+      key: person.key,
+      name: person.name,
+      rows: person.rows,
+      distance: bestScore.distance,
+      normalized: bestScore.normalized,
+      startsWith: bestScore.startsWith
+    });
+  }
+
+  return candidates.sort((a, b) => {
+    if (a.distance !== b.distance) {
+      return a.distance - b.distance;
+    }
+    if (a.normalized !== b.normalized) {
+      return a.normalized - b.normalized;
+    }
+    return a.name.localeCompare(b.name);
+  });
+}
+
 function scoreAlias(query, alias, options = {}) {
   if (query.length < 2) {
     return null;
@@ -301,7 +345,26 @@ function scoreAlias(query, alias, options = {}) {
     return null;
   }
 
-  return { distance, normalized, startsWith: false };
+  return { distance, normalized, startsWith };
+}
+
+function scoreLastNameAutocomplete(lastNameQuery, alias, maxDistance) {
+  const aliasLastName = extractLastToken(alias);
+  if (!aliasLastName || aliasLastName.length < lastNameQuery.length) {
+    return null;
+  }
+
+  const aliasPrefix = aliasLastName.slice(0, lastNameQuery.length);
+  const distance = manhattanDistance(lastNameQuery, aliasPrefix);
+  if (distance > maxDistance) {
+    return null;
+  }
+
+  return {
+    distance,
+    normalized: distance / lastNameQuery.length,
+    startsWith: distance === 0
+  };
 }
 
 function renderSuggestions(candidates) {
@@ -615,6 +678,32 @@ function normalizeName(value) {
     .replace(/[^a-z0-9\s]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function extractLastToken(value) {
+  const tokens = value.split(" ");
+  return tokens.at(-1) || "";
+}
+
+function autocompleteDistanceLimit(length) {
+  if (length <= 6) {
+    return 1;
+  }
+  if (length <= 10) {
+    return 2;
+  }
+  return 3;
+}
+
+function manhattanDistance(a, b) {
+  const maxLength = Math.max(a.length, b.length);
+  let distance = 0;
+  for (let index = 0; index < maxLength; index += 1) {
+    if ((a[index] || "") !== (b[index] || "")) {
+      distance += 1;
+    }
+  }
+  return distance;
 }
 
 function levenshtein(a, b) {
