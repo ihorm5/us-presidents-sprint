@@ -173,6 +173,127 @@ const LAUREATE_ROWS = [
   { number: 122, name: "Ласло Краснагоркаї", aliases: ["László Krasznahorkai", "Krasznahorkai"] }
 ];
 
+const ELEMENT_ROWS = [
+  { number: 1, symbol: "H", period: 1, group: 1, x: 1, y: 1, name: "Водень", aliases: ["Hydrogen"] },
+  { number: 2, symbol: "He", period: 1, group: 18, x: 18, y: 1, name: "Гелій", aliases: ["Helium"] },
+  { number: 3, symbol: "Li", period: 2, group: 1, x: 1, y: 2, name: "Літій", aliases: ["Lithium"] },
+  { number: 4, symbol: "Be", period: 2, group: 2, x: 2, y: 2, name: "Берилій", aliases: ["Beryllium"] },
+  { number: 5, symbol: "B", period: 2, group: 13, x: 13, y: 2, name: "Бор", aliases: ["Boron"] },
+  { number: 6, symbol: "C", period: 2, group: 14, x: 14, y: 2, name: "Вуглець", aliases: ["Carbon"] },
+  { number: 7, symbol: "N", period: 2, group: 15, x: 15, y: 2, name: "Азот", aliases: ["Nitrogen"] },
+  { number: 8, symbol: "O", period: 2, group: 16, x: 16, y: 2, name: "Кисень", aliases: ["Oxygen"] },
+  { number: 9, symbol: "F", period: 2, group: 17, x: 17, y: 2, name: "Фтор", aliases: ["Fluorine"] },
+  { number: 10, symbol: "Ne", period: 2, group: 18, x: 18, y: 2, name: "Неон", aliases: ["Neon"] },
+  { number: 11, symbol: "Na", period: 3, group: 1, x: 1, y: 3, name: "Натрій", aliases: ["Sodium"] },
+  { number: 12, symbol: "Mg", period: 3, group: 2, x: 2, y: 3, name: "Магній", aliases: ["Magnesium"] },
+  { number: 13, symbol: "Al", period: 3, group: 13, x: 13, y: 3, name: "Алюміній", aliases: ["Aluminium"] },
+  { number: 14, symbol: "Si", period: 3, group: 14, x: 14, y: 3, name: "Кремній", aliases: ["Silicon"] },
+  { number: 15, symbol: "P", period: 3, group: 15, x: 15, y: 3, name: "Фосфор", aliases: ["Phosphorus"] },
+  { number: 16, symbol: "S", period: 3, group: 16, x: 16, y: 3, name: "Сірка", aliases: ["Sulfur"] },
+  { number: 17, symbol: "Cl", period: 3, group: 17, x: 17, y: 3, name: "Хлор", aliases: ["Chlorine"] },
+  { number: 18, symbol: "Ar", period: 3, group: 18, x: 18, y: 3, name: "Аргон", aliases: ["Argon"] },
+  { number: 19, symbol: "K", period: 4, group: 1, x: 1, y: 4, name: "Калій", aliases: ["Potassium"] },
+  { number: 20, symbol: "Ca", period: 4, group: 2, x: 2, y: 4, name: "Кальцій", aliases: ["Calcium"] },
+  { number: 21, symbol: "Sc", period: 4, group: 3, x: 3, y: 4, name: "Скандій", aliases: ["Scandium"] },
+  { number: 22, symbol: "Ti", period: 4, group: 4, x: 4, y: 4, name: "Титан (хімічний елемент)", aliases: ["Titanium"] },
+  { number: 23, symbol: "V", period: 4, group: 5, x: 5, y: 4, name: "Ванадій", aliases: ["Vanadium"] },
+  { number: 24, symbol: "Cr", period: 4, group: 6, x: 6, y: 4, name: "Хром", aliases: ["Chromium"] },
+  { number: 25, symbol: "Mn", period: 4, group: 7, x: 7, y: 4, name: "Манган", aliases: ["Manganese"] },
+  { number: 26, symbol: "Fe", period: 4, group: 8, x: 8, y: 4, name: "Залізо", aliases: ["Iron"] },
+  { number: 27, symbol: "Co", period: 4, group: 9, x: 9, y: 4, name: "Кобальт", aliases: ["Cobalt"] },
+  { number: 28, symbol: "Ni", period: 4, group: 10, x: 10, y: 4, name: "Нікель", aliases: ["Nickel"] },
+  { number: 29, symbol: "Cu", period: 4, group: 11, x: 11, y: 4, name: "Мідь", aliases: ["Copper"] },
+  { number: 30, symbol: "Zn", period: 4, group: 12, x: 12, y: 4, name: "Цинк", aliases: ["Zinc"] },
+  { number: 31, symbol: "Ga", period: 4, group: 13, x: 13, y: 4, name: "Галій", aliases: ["Gallium"] },
+  { number: 32, symbol: "Ge", period: 4, group: 14, x: 14, y: 4, name: "Германій", aliases: ["Germanium"] },
+  { number: 33, symbol: "As", period: 4, group: 15, x: 15, y: 4, name: "Арсен", aliases: ["Arsenic"] },
+  { number: 34, symbol: "Se", period: 4, group: 16, x: 16, y: 4, name: "Селен", aliases: ["Selenium"] },
+  { number: 35, symbol: "Br", period: 4, group: 17, x: 17, y: 4, name: "Бром", aliases: ["Bromine"] },
+  { number: 36, symbol: "Kr", period: 4, group: 18, x: 18, y: 4, name: "Криптон", aliases: ["Krypton"] },
+  { number: 37, symbol: "Rb", period: 5, group: 1, x: 1, y: 5, name: "Рубідій", aliases: ["Rubidium"] },
+  { number: 38, symbol: "Sr", period: 5, group: 2, x: 2, y: 5, name: "Стронцій", aliases: ["Strontium"] },
+  { number: 39, symbol: "Y", period: 5, group: 3, x: 3, y: 5, name: "Ітрій", aliases: ["Yttrium"] },
+  { number: 40, symbol: "Zr", period: 5, group: 4, x: 4, y: 5, name: "Цирконій", aliases: ["Zirconium"] },
+  { number: 41, symbol: "Nb", period: 5, group: 5, x: 5, y: 5, name: "Ніобій", aliases: ["Niobium"] },
+  { number: 42, symbol: "Mo", period: 5, group: 6, x: 6, y: 5, name: "Молібден", aliases: ["Molybdenum"] },
+  { number: 43, symbol: "Tc", period: 5, group: 7, x: 7, y: 5, name: "Технецій", aliases: ["Technetium"] },
+  { number: 44, symbol: "Ru", period: 5, group: 8, x: 8, y: 5, name: "Рутеній", aliases: ["Ruthenium"] },
+  { number: 45, symbol: "Rh", period: 5, group: 9, x: 9, y: 5, name: "Родій", aliases: ["Rhodium"] },
+  { number: 46, symbol: "Pd", period: 5, group: 10, x: 10, y: 5, name: "Паладій", aliases: ["Palladium"] },
+  { number: 47, symbol: "Ag", period: 5, group: 11, x: 11, y: 5, name: "Срібло", aliases: ["Silver"] },
+  { number: 48, symbol: "Cd", period: 5, group: 12, x: 12, y: 5, name: "Кадмій", aliases: ["Cadmium"] },
+  { number: 49, symbol: "In", period: 5, group: 13, x: 13, y: 5, name: "Індій", aliases: ["Indium"] },
+  { number: 50, symbol: "Sn", period: 5, group: 14, x: 14, y: 5, name: "Олово", aliases: ["Tin"] },
+  { number: 51, symbol: "Sb", period: 5, group: 15, x: 15, y: 5, name: "Стибій", aliases: ["Antimony"] },
+  { number: 52, symbol: "Te", period: 5, group: 16, x: 16, y: 5, name: "Телур", aliases: ["Tellurium"] },
+  { number: 53, symbol: "I", period: 5, group: 17, x: 17, y: 5, name: "Йод", aliases: ["Iodine"] },
+  { number: 54, symbol: "Xe", period: 5, group: 18, x: 18, y: 5, name: "Ксенон", aliases: ["Xenon"] },
+  { number: 55, symbol: "Cs", period: 6, group: 1, x: 1, y: 6, name: "Цезій", aliases: ["Cesium"] },
+  { number: 56, symbol: "Ba", period: 6, group: 2, x: 2, y: 6, name: "Барій", aliases: ["Barium"] },
+  { number: 57, symbol: "La", period: 6, group: 3, x: 3, y: 9, name: "Лантан", aliases: ["Lanthanum"] },
+  { number: 58, symbol: "Ce", period: 6, group: 3, x: 4, y: 9, name: "Церій", aliases: ["Cerium"] },
+  { number: 59, symbol: "Pr", period: 6, group: 3, x: 5, y: 9, name: "Празеодим", aliases: ["Praseodymium"] },
+  { number: 60, symbol: "Nd", period: 6, group: 3, x: 6, y: 9, name: "Неодим", aliases: ["Neodymium"] },
+  { number: 61, symbol: "Pm", period: 6, group: 3, x: 7, y: 9, name: "Прометій", aliases: ["Promethium"] },
+  { number: 62, symbol: "Sm", period: 6, group: 3, x: 8, y: 9, name: "Самарій", aliases: ["Samarium"] },
+  { number: 63, symbol: "Eu", period: 6, group: 3, x: 9, y: 9, name: "Європій", aliases: ["Europium"] },
+  { number: 64, symbol: "Gd", period: 6, group: 3, x: 10, y: 9, name: "Гадоліній", aliases: ["Gadolinium"] },
+  { number: 65, symbol: "Tb", period: 6, group: 3, x: 11, y: 9, name: "Тербій", aliases: ["Terbium"] },
+  { number: 66, symbol: "Dy", period: 6, group: 3, x: 12, y: 9, name: "Диспрозій", aliases: ["Dysprosium"] },
+  { number: 67, symbol: "Ho", period: 6, group: 3, x: 13, y: 9, name: "Гольмій", aliases: ["Holmium"] },
+  { number: 68, symbol: "Er", period: 6, group: 3, x: 14, y: 9, name: "Ербій", aliases: ["Erbium"] },
+  { number: 69, symbol: "Tm", period: 6, group: 3, x: 15, y: 9, name: "Тулій", aliases: ["Thulium"] },
+  { number: 70, symbol: "Yb", period: 6, group: 3, x: 16, y: 9, name: "Ітербій", aliases: ["Ytterbium"] },
+  { number: 71, symbol: "Lu", period: 6, group: 3, x: 17, y: 9, name: "Лютецій", aliases: ["Lutetium"] },
+  { number: 72, symbol: "Hf", period: 6, group: 4, x: 4, y: 6, name: "Гафній", aliases: ["Hafnium"] },
+  { number: 73, symbol: "Ta", period: 6, group: 5, x: 5, y: 6, name: "Тантал (хімічний елемент)", aliases: ["Tantalum"] },
+  { number: 74, symbol: "W", period: 6, group: 6, x: 6, y: 6, name: "Вольфрам", aliases: ["Tungsten"] },
+  { number: 75, symbol: "Re", period: 6, group: 7, x: 7, y: 6, name: "Реній", aliases: ["Rhenium"] },
+  { number: 76, symbol: "Os", period: 6, group: 8, x: 8, y: 6, name: "Осмій", aliases: ["Osmium"] },
+  { number: 77, symbol: "Ir", period: 6, group: 9, x: 9, y: 6, name: "Іридій", aliases: ["Iridium"] },
+  { number: 78, symbol: "Pt", period: 6, group: 10, x: 10, y: 6, name: "Платина", aliases: ["Platinum"] },
+  { number: 79, symbol: "Au", period: 6, group: 11, x: 11, y: 6, name: "Золото", aliases: ["Gold"] },
+  { number: 80, symbol: "Hg", period: 6, group: 12, x: 12, y: 6, name: "Ртуть", aliases: ["Mercury"] },
+  { number: 81, symbol: "Tl", period: 6, group: 13, x: 13, y: 6, name: "Талій", aliases: ["Thallium"] },
+  { number: 82, symbol: "Pb", period: 6, group: 14, x: 14, y: 6, name: "Свинець", aliases: ["Lead"] },
+  { number: 83, symbol: "Bi", period: 6, group: 15, x: 15, y: 6, name: "Бісмут", aliases: ["Bismuth"] },
+  { number: 84, symbol: "Po", period: 6, group: 16, x: 16, y: 6, name: "Полоній", aliases: ["Polonium"] },
+  { number: 85, symbol: "At", period: 6, group: 17, x: 17, y: 6, name: "Астат", aliases: ["Astatine"] },
+  { number: 86, symbol: "Rn", period: 6, group: 18, x: 18, y: 6, name: "Радон", aliases: ["Radon"] },
+  { number: 87, symbol: "Fr", period: 7, group: 1, x: 1, y: 7, name: "Францій", aliases: ["Francium"] },
+  { number: 88, symbol: "Ra", period: 7, group: 2, x: 2, y: 7, name: "Радій", aliases: ["Radium"] },
+  { number: 89, symbol: "Ac", period: 7, group: 3, x: 3, y: 10, name: "Актиній", aliases: ["Actinium"] },
+  { number: 90, symbol: "Th", period: 7, group: 3, x: 4, y: 10, name: "Торій", aliases: ["Thorium"] },
+  { number: 91, symbol: "Pa", period: 7, group: 3, x: 5, y: 10, name: "Протактиній", aliases: ["Protactinium"] },
+  { number: 92, symbol: "U", period: 7, group: 3, x: 6, y: 10, name: "Уран (хімічний елемент)", aliases: ["Uranium"] },
+  { number: 93, symbol: "Np", period: 7, group: 3, x: 7, y: 10, name: "Нептуній", aliases: ["Neptunium"] },
+  { number: 94, symbol: "Pu", period: 7, group: 3, x: 8, y: 10, name: "Плутоній", aliases: ["Plutonium"] },
+  { number: 95, symbol: "Am", period: 7, group: 3, x: 9, y: 10, name: "Америцій", aliases: ["Americium"] },
+  { number: 96, symbol: "Cm", period: 7, group: 3, x: 10, y: 10, name: "Кюрій", aliases: ["Curium"] },
+  { number: 97, symbol: "Bk", period: 7, group: 3, x: 11, y: 10, name: "Берклій", aliases: ["Berkelium"] },
+  { number: 98, symbol: "Cf", period: 7, group: 3, x: 12, y: 10, name: "Каліфорній", aliases: ["Californium"] },
+  { number: 99, symbol: "Es", period: 7, group: 3, x: 13, y: 10, name: "Ейнштейній", aliases: ["Einsteinium"] },
+  { number: 100, symbol: "Fm", period: 7, group: 3, x: 14, y: 10, name: "Фермій", aliases: ["Fermium"] },
+  { number: 101, symbol: "Md", period: 7, group: 3, x: 15, y: 10, name: "Менделевій", aliases: ["Mendelevium"] },
+  { number: 102, symbol: "No", period: 7, group: 3, x: 16, y: 10, name: "Нобелій", aliases: ["Nobelium"] },
+  { number: 103, symbol: "Lr", period: 7, group: 3, x: 17, y: 10, name: "Лоуренсій", aliases: ["Lawrencium"] },
+  { number: 104, symbol: "Rf", period: 7, group: 4, x: 4, y: 7, name: "Резерфордій", aliases: ["Rutherfordium"] },
+  { number: 105, symbol: "Db", period: 7, group: 5, x: 5, y: 7, name: "Дубній", aliases: ["Dubnium"] },
+  { number: 106, symbol: "Sg", period: 7, group: 6, x: 6, y: 7, name: "Сіборгій", aliases: ["Seaborgium"] },
+  { number: 107, symbol: "Bh", period: 7, group: 7, x: 7, y: 7, name: "Борій", aliases: ["Bohrium"] },
+  { number: 108, symbol: "Hs", period: 7, group: 8, x: 8, y: 7, name: "Гасій", aliases: ["Hassium"] },
+  { number: 109, symbol: "Mt", period: 7, group: 9, x: 9, y: 7, name: "Майтнерій", aliases: ["Meitnerium"] },
+  { number: 110, symbol: "Ds", period: 7, group: 10, x: 10, y: 7, name: "Дармштадтій", aliases: ["Darmstadtium"] },
+  { number: 111, symbol: "Rg", period: 7, group: 11, x: 11, y: 7, name: "Рентгеній", aliases: ["Roentgenium"] },
+  { number: 112, symbol: "Cn", period: 7, group: 12, x: 12, y: 7, name: "Коперницій", aliases: ["Copernicium"] },
+  { number: 113, symbol: "Nh", period: 7, group: 13, x: 13, y: 7, name: "Ніхоній", aliases: ["Nihonium"] },
+  { number: 114, symbol: "Fl", period: 7, group: 14, x: 14, y: 7, name: "Флеровій", aliases: ["Flerovium"] },
+  { number: 115, symbol: "Mc", period: 7, group: 15, x: 15, y: 7, name: "Московій", aliases: ["Moscovium"] },
+  { number: 116, symbol: "Lv", period: 7, group: 16, x: 16, y: 7, name: "Ліверморій", aliases: ["Livermorium"] },
+  { number: 117, symbol: "Ts", period: 7, group: 17, x: 17, y: 7, name: "Теннессин", aliases: ["Tennessine"] },
+  { number: 118, symbol: "Og", period: 7, group: 18, x: 18, y: 7, name: "Оґанесон", aliases: ["Oganesson"] }
+];
+
 const GAME_STATUS = Object.freeze({
   running: "running",
   won: "won",
@@ -180,7 +301,12 @@ const GAME_STATUS = Object.freeze({
 });
 const GAME_MODES = Object.freeze({
   presidents: "presidents",
-  literature: "literature"
+  literature: "literature",
+  elements: "elements"
+});
+const BOARD_TYPES = Object.freeze({
+  list: "list",
+  periodic: "periodic"
 });
 const DEFAULT_GAME_MODE = GAME_MODES.presidents;
 const GAME_CONFIG = Object.freeze({
@@ -189,6 +315,7 @@ const GAME_CONFIG = Object.freeze({
     subtitle: "Type one name at a time. Autocomplete appears for strong surname matches.",
     placeholder: "Try: Lincoln",
     shareLabel: "U.S. Presidents Sprint",
+    boardType: BOARD_TYPES.list,
     rows: PRESIDENT_ROWS
   },
   [GAME_MODES.literature]: {
@@ -196,7 +323,16 @@ const GAME_CONFIG = Object.freeze({
     subtitle: "Вводь по одному імені. Підказки зʼявляються для точних збігів прізвищ.",
     placeholder: "Спробуй: Хемінгуей",
     shareLabel: "Нобелівська літературна вікторина",
+    boardType: BOARD_TYPES.list,
     rows: LAUREATE_ROWS
+  },
+  [GAME_MODES.elements]: {
+    title: "Назви всі хімічні елементи",
+    subtitle: "Натисни елемент у таблиці, введи його назву. Зараховується тільки правильний порядок (1 → 118).",
+    placeholder: "Спробуй: Водень",
+    shareLabel: "Хімічні елементи Sprint",
+    boardType: BOARD_TYPES.periodic,
+    rows: ELEMENT_ROWS
   }
 });
 const MIN_AUTOCOMPLETE_LASTNAME_LENGTH = 5;
@@ -206,13 +342,15 @@ let totalRows = 0;
 let rowsWithKeys = [];
 let people = new Map();
 let aliasToKeys = new Map();
+let rowsByNumber = new Map();
 
 const state = {
   foundKeys: new Set(),
   status: GAME_STATUS.running,
   startedAtMs: 0,
   elapsedMs: 0,
-  timerIntervalId: null
+  timerIntervalId: null,
+  selectedElementNumber: null
 };
 
 const elements = {
@@ -224,6 +362,7 @@ const elements = {
   progress: document.getElementById("progress-text"),
   timer: document.getElementById("timer-text"),
   list: document.getElementById("game-rows"),
+  periodicBoard: document.getElementById("periodic-board"),
   resign: document.getElementById("resign-button"),
   share: document.getElementById("share-button"),
   reset: document.getElementById("reset-button"),
@@ -249,8 +388,10 @@ function setActiveMode(nextMode) {
     key: normalizeName(row.name)
   }));
   totalRows = rowsWithKeys.length;
+  rowsByNumber = new Map(rowsWithKeys.map((row) => [row.number, row]));
   people = buildPeople(rowsWithKeys);
   aliasToKeys = buildAliasIndex(people);
+  state.selectedElementNumber = null;
 
   applyGameMeta(config);
   renderRows();
@@ -259,6 +400,14 @@ function setActiveMode(nextMode) {
 
 function getActiveGameConfig() {
   return GAME_CONFIG[activeMode];
+}
+
+function isElementsMode() {
+  return getActiveGameConfig().boardType === BOARD_TYPES.periodic;
+}
+
+function nextExpectedElementNumber() {
+  return countFilledRows() + 1;
 }
 
 function applyGameMeta(config) {
@@ -295,6 +444,18 @@ function bindEvents() {
 }
 
 function renderRows() {
+  if (isElementsMode()) {
+    renderPeriodicBoard();
+    return;
+  }
+
+  renderListBoard();
+}
+
+function renderListBoard() {
+  elements.list.classList.remove("is-hidden");
+  elements.periodicBoard.classList.remove("is-visible");
+
   const fragment = document.createDocumentFragment();
   rowElementsByNumber.clear();
 
@@ -311,8 +472,74 @@ function renderRows() {
   elements.list.replaceChildren(fragment);
 }
 
+function renderPeriodicBoard() {
+  elements.list.classList.add("is-hidden");
+  elements.periodicBoard.classList.add("is-visible");
+
+  const grid = document.createElement("div");
+  grid.className = "periodic-grid";
+  rowElementsByNumber.clear();
+
+  rowsWithKeys.forEach((row) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "element-cell";
+    button.style.gridColumn = String(row.x);
+    button.style.gridRow = String(row.y);
+    button.dataset.number = String(row.number);
+    button.dataset.key = row.key;
+    button.innerHTML = `<span class="element-number">${row.number}</span><span class="element-symbol">${row.symbol}</span>`;
+
+    if (state.foundKeys.has(row.key)) {
+      button.classList.add("is-found");
+    } else if (state.status !== GAME_STATUS.running) {
+      button.classList.add("is-revealed");
+    }
+
+    if (state.selectedElementNumber === row.number) {
+      button.classList.add("is-selected");
+    }
+
+    button.addEventListener("click", () => {
+      selectElement(row.number);
+    });
+
+    rowElementsByNumber.set(row.number, button);
+    grid.appendChild(button);
+  });
+
+  elements.periodicBoard.replaceChildren(grid);
+}
+
+function selectElement(number) {
+  if (!isElementsMode() || !isGameRunning()) {
+    return;
+  }
+
+  state.selectedElementNumber = number;
+  renderPeriodicBoard();
+
+  const row = rowsByNumber.get(number);
+  const nextExpected = nextExpectedElementNumber();
+  if (!row) {
+    return;
+  }
+
+  if (number !== nextExpected) {
+    setFeedback(`Спочатку заповни елемент №${nextExpected}.`);
+    return;
+  }
+
+  setFeedback(`Вибрано №${number} (${row.symbol}). Введи назву елемента.`);
+}
+
 function handleInput() {
   if (!isGameRunning()) {
+    clearSuggestions();
+    return;
+  }
+
+  if (isElementsMode()) {
     clearSuggestions();
     return;
   }
@@ -347,6 +574,11 @@ function handleSubmit(event) {
     return;
   }
 
+  if (isElementsMode()) {
+    handleElementSubmit(rawGuess);
+    return;
+  }
+
   const outcome = resolveGuess(rawGuess);
 
   if (outcome.type === "matched") {
@@ -369,6 +601,45 @@ function handleSubmit(event) {
   }
 
   setFeedback("No close match found. Try a fuller name.");
+}
+
+function handleElementSubmit(rawGuess) {
+  if (state.selectedElementNumber === null) {
+    setFeedback("Спочатку натисни елемент у таблиці.");
+    return;
+  }
+
+  const selectedRow = rowsByNumber.get(state.selectedElementNumber);
+  if (!selectedRow) {
+    setFeedback("Елемент не знайдено.");
+    return;
+  }
+
+  const expectedNumber = nextExpectedElementNumber();
+  if (selectedRow.number !== expectedNumber) {
+    setFeedback(`Неправильний порядок: зараз потрібен елемент №${expectedNumber}.`);
+    return;
+  }
+
+  const normalizedGuess = normalizeName(rawGuess);
+  const aliases = new Set([selectedRow.name, ...(selectedRow.aliases || [])]);
+  const normalizedAliases = [...aliases].map((alias) => normalizeName(alias));
+  if (!normalizedAliases.includes(normalizedGuess)) {
+    setFeedback(`Ні, для №${selectedRow.number} це має бути "${selectedRow.name}".`);
+    return;
+  }
+
+  if (!fillPresident(selectedRow.key)) {
+    return;
+  }
+
+  elements.input.value = "";
+  clearSuggestions();
+  state.selectedElementNumber = null;
+  if (isElementsMode()) {
+    renderPeriodicBoard();
+  }
+  elements.input.focus();
 }
 
 function resolveGuess(rawGuess) {
@@ -613,6 +884,24 @@ function fillPresident(key) {
 
   state.foundKeys.add(key);
 
+  if (isElementsMode()) {
+    const selectedRow = rowsWithKeys.find((row) => row.key === key);
+    if (selectedRow) {
+      const cell = rowElementsByNumber.get(selectedRow.number);
+      if (cell) {
+        cell.classList.add("is-found");
+        cell.classList.remove("is-selected");
+      }
+      setFeedback(`Заповнено елемент №${selectedRow.number}: ${selectedRow.name}.`);
+    }
+    updateProgress();
+    if (countFilledRows() === totalRows) {
+      endGame(GAME_STATUS.won);
+      return true;
+    }
+    return true;
+  }
+
   person.rows.forEach((rowNumber) => {
     const rowElement = rowElementsByNumber.get(rowNumber);
     if (!rowElement) {
@@ -645,8 +934,10 @@ function resignGame() {
 }
 
 function resetGame() {
+  state.selectedElementNumber = null;
   rowElementsByNumber.forEach((rowElement) => {
     rowElement.classList.remove("is-found");
+    rowElement.classList.remove("is-selected");
     rowElement.classList.remove("is-revealed");
     const nameCell = rowElement.querySelector(".row-name");
     if (nameCell) {
@@ -661,6 +952,7 @@ function startNewGame(message = "Game started.") {
   stopGameClock();
   state.foundKeys.clear();
   state.status = GAME_STATUS.running;
+  state.selectedElementNumber = null;
   state.elapsedMs = 0;
   state.startedAtMs = Date.now();
   state.timerIntervalId = window.setInterval(updateTimer, 250);
@@ -671,6 +963,9 @@ function startNewGame(message = "Game started.") {
   updateProgress();
   updateTimer();
   setFeedback(message);
+  if (isElementsMode()) {
+    renderPeriodicBoard();
+  }
   elements.input.focus();
 }
 
@@ -697,6 +992,19 @@ function endGame(nextStatus) {
 }
 
 function revealRemainingAnswers() {
+  if (isElementsMode()) {
+    rowsWithKeys.forEach((row) => {
+      if (state.foundKeys.has(row.key)) {
+        return;
+      }
+      const cell = rowElementsByNumber.get(row.number);
+      if (cell) {
+        cell.classList.add("is-revealed");
+      }
+    });
+    return;
+  }
+
   rowsWithKeys.forEach((row) => {
     if (state.foundKeys.has(row.key)) {
       return;
