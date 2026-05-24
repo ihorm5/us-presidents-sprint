@@ -141,7 +141,7 @@ function handleInput() {
   }
 
   const candidates = rankAutocompleteCandidates(lastNameQuery).slice(0, 5);
-  renderSuggestions(candidates);
+  renderSuggestions(candidates, lastNameQuery);
 }
 
 function handleSubmit(event) {
@@ -367,7 +367,17 @@ function scoreLastNameAutocomplete(lastNameQuery, alias, maxDistance) {
   };
 }
 
-function renderSuggestions(candidates) {
+function renderSuggestions(candidates, lastNameQuery = "") {
+  const currentLastNameQuery = extractLastToken(normalizeName(elements.input.value));
+  if (
+    !lastNameQuery ||
+    currentLastNameQuery.length < MIN_AUTOCOMPLETE_LASTNAME_LENGTH ||
+    currentLastNameQuery !== lastNameQuery
+  ) {
+    clearSuggestions();
+    return;
+  }
+
   if (candidates.length === 0) {
     clearSuggestions();
     return;
