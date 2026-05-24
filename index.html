@@ -3,18 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>U.S. Presidents Sprint</title>
+  <title>Memory Sprint</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main class="app-shell">
     <header class="hero">
       <p class="eyebrow">Memory Game</p>
-      <h1>Name Every U.S. President</h1>
-      <p class="subtitle">Type one name at a time. Near-miss typos are accepted when they are close enough.</p>
+      <h1 id="game-title">Name Every U.S. President</h1>
+      <p id="game-subtitle" class="subtitle">Type one name at a time. Autocomplete appears for strong surname matches.</p>
     </header>
 
     <section class="controls">
+      <div class="mode-row">
+        <label for="mode-select">Mode</label>
+        <select id="mode-select">
+          <option value="presidents" selected>U.S. Presidents</option>
+          <option value="literature">Nobel Literature Laureates</option>
+        </select>
+      </div>
       <form id="guess-form" autocomplete="off">
         <label for="guess-input">Your guess</label>
         <div class="input-row">
@@ -45,10 +52,10 @@
           <button id="reset-button" type="button">Reset</button>
         </div>
       </div>
-      <ol id="president-rows" class="rows"></ol>
+      <ol id="game-rows" class="rows"></ol>
     </section>
   </main>
 
-  <script src="script.js?v=2026-05-24-2"></script>
+  <script src="script.js?v=2026-05-24-4"></script>
 </body>
 </html>

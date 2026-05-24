@@ -48,21 +48,164 @@ const PRESIDENT_ROWS = [
   { number: 47, name: "Donald Trump", aliases: ["donald j trump"] }
 ];
 
-const TOTAL_ROWS = PRESIDENT_ROWS.length;
+const LAUREATE_ROWS = [
+  { number: 1, name: "Sully Prudhomme" },
+  { number: 2, name: "Theodor Mommsen" },
+  { number: 3, name: "Bjørnstjerne Bjørnson" },
+  { number: 4, name: "Frédéric Mistral" },
+  { number: 5, name: "José Echegaray" },
+  { number: 6, name: "Henryk Sienkiewicz" },
+  { number: 7, name: "Giosuè Carducci" },
+  { number: 8, name: "Rudyard Kipling" },
+  { number: 9, name: "Rudolf Eucken" },
+  { number: 10, name: "Selma Lagerlöf" },
+  { number: 11, name: "Paul Heyse" },
+  { number: 12, name: "Maurice Maeterlinck" },
+  { number: 13, name: "Gerhart Hauptmann" },
+  { number: 14, name: "Rabindranath Tagore" },
+  { number: 15, name: "Romain Rolland" },
+  { number: 16, name: "Verner von Heidenstam" },
+  { number: 17, name: "Karl Gjellerup" },
+  { number: 18, name: "Henrik Pontoppidan" },
+  { number: 19, name: "Carl Spitteler" },
+  { number: 20, name: "Knut Hamsun" },
+  { number: 21, name: "Anatole France" },
+  { number: 22, name: "Jacinto Benavente" },
+  { number: 23, name: "William Butler Yeats" },
+  { number: 24, name: "Władysław Reymont" },
+  { number: 25, name: "George Bernard Shaw" },
+  { number: 26, name: "Grazia Deledda" },
+  { number: 27, name: "Henri Bergson" },
+  { number: 28, name: "Sigrid Undset" },
+  { number: 29, name: "Thomas Mann" },
+  { number: 30, name: "Sinclair Lewis" },
+  { number: 31, name: "Erik Axel Karlfeldt" },
+  { number: 32, name: "John Galsworthy" },
+  { number: 33, name: "Ivan Bunin" },
+  { number: 34, name: "Luigi Pirandello" },
+  { number: 35, name: "Eugene O'Neill" },
+  { number: 36, name: "Roger Martin du Gard" },
+  { number: 37, name: "Pearl Buck" },
+  { number: 38, name: "Frans Eemil Sillanpää" },
+  { number: 39, name: "Johannes V. Jensen" },
+  { number: 40, name: "Gabriela Mistral" },
+  { number: 41, name: "Hermann Hesse" },
+  { number: 42, name: "André Gide" },
+  { number: 43, name: "T.S. Eliot" },
+  { number: 44, name: "William Faulkner" },
+  { number: 45, name: "Bertrand Russell" },
+  { number: 46, name: "Pär Lagerkvist" },
+  { number: 47, name: "François Mauriac" },
+  { number: 48, name: "Winston Churchill" },
+  { number: 49, name: "Ernest Hemingway" },
+  { number: 50, name: "Halldór Laxness" },
+  { number: 51, name: "Juan Ramón Jiménez" },
+  { number: 52, name: "Albert Camus" },
+  { number: 53, name: "Boris Pasternak" },
+  { number: 54, name: "Salvatore Quasimodo" },
+  { number: 55, name: "Saint-John Perse" },
+  { number: 56, name: "Ivo Andrić" },
+  { number: 57, name: "John Steinbeck" },
+  { number: 58, name: "Giorgos Seferis" },
+  { number: 59, name: "Jean-Paul Sartre" },
+  { number: 60, name: "Mikhail Sholokhov" },
+  { number: 61, name: "Shmuel Agnon" },
+  { number: 62, name: "Nelly Sachs" },
+  { number: 63, name: "Miguel Angel Asturias" },
+  { number: 64, name: "Yasunari Kawabata" },
+  { number: 65, name: "Samuel Beckett" },
+  { number: 66, name: "Aleksandr Solzhenitsyn" },
+  { number: 67, name: "Pablo Neruda" },
+  { number: 68, name: "Heinrich Böll" },
+  { number: 69, name: "Patrick White" },
+  { number: 70, name: "Eyvind Johnson" },
+  { number: 71, name: "Harry Martinson" },
+  { number: 72, name: "Eugenio Montale" },
+  { number: 73, name: "Saul Bellow" },
+  { number: 74, name: "Vicente Aleixandre" },
+  { number: 75, name: "Isaac Bashevis Singer" },
+  { number: 76, name: "Odysseus Elytis" },
+  { number: 77, name: "Czesław Miłosz" },
+  { number: 78, name: "Elias Canetti" },
+  { number: 79, name: "Gabriel García Márquez" },
+  { number: 80, name: "William Golding" },
+  { number: 81, name: "Jaroslav Seifert" },
+  { number: 82, name: "Claude Simon" },
+  { number: 83, name: "Wole Soyinka" },
+  { number: 84, name: "Joseph Brodsky" },
+  { number: 85, name: "Naguib Mahfouz" },
+  { number: 86, name: "Camilo José Cela" },
+  { number: 87, name: "Octavio Paz" },
+  { number: 88, name: "Nadine Gordimer" },
+  { number: 89, name: "Derek Walcott" },
+  { number: 90, name: "Toni Morrison" },
+  { number: 91, name: "Kenzaburo Oe" },
+  { number: 92, name: "Seamus Heaney" },
+  { number: 93, name: "Wisława Szymborska" },
+  { number: 94, name: "Dario Fo" },
+  { number: 95, name: "José Saramago" },
+  { number: 96, name: "Günter Grass" },
+  { number: 97, name: "Gao Xingjian" },
+  { number: 98, name: "V. S. Naipaul" },
+  { number: 99, name: "Imre Kertész" },
+  { number: 100, name: "J. M. Coetzee" },
+  { number: 101, name: "Elfriede Jelinek" },
+  { number: 102, name: "Harold Pinter" },
+  { number: 103, name: "Orhan Pamuk" },
+  { number: 104, name: "Doris Lessing" },
+  { number: 105, name: "Jean-Marie Gustave Le Clézio" },
+  { number: 106, name: "Herta Müller" },
+  { number: 107, name: "Mario Vargas Llosa" },
+  { number: 108, name: "Tomas Tranströmer" },
+  { number: 109, name: "Mo Yan" },
+  { number: 110, name: "Alice Munro" },
+  { number: 111, name: "Patrick Modiano" },
+  { number: 112, name: "Svetlana Alexievich" },
+  { number: 113, name: "Bob Dylan" },
+  { number: 114, name: "Kazuo Ishiguro" },
+  { number: 115, name: "Olga Tokarczuk" },
+  { number: 116, name: "Peter Handke" },
+  { number: 117, name: "Louise Glück" },
+  { number: 118, name: "Abdulrazak Gurnah" },
+  { number: 119, name: "Annie Ernaux" },
+  { number: 120, name: "Jon Fosse" },
+  { number: 121, name: "Han Kang" },
+  { number: 122, name: "László Krasznahorkai" }
+];
+
 const GAME_STATUS = Object.freeze({
   running: "running",
   won: "won",
   resigned: "resigned"
 });
+const GAME_MODES = Object.freeze({
+  presidents: "presidents",
+  literature: "literature"
+});
+const DEFAULT_GAME_MODE = GAME_MODES.presidents;
+const GAME_CONFIG = Object.freeze({
+  [GAME_MODES.presidents]: {
+    title: "Name Every U.S. President",
+    subtitle: "Type one name at a time. Autocomplete appears for strong surname matches.",
+    placeholder: "Try: Lincoln",
+    shareLabel: "U.S. Presidents Sprint",
+    rows: PRESIDENT_ROWS
+  },
+  [GAME_MODES.literature]: {
+    title: "Name Every Nobel Literature Laureate",
+    subtitle: "Type one name at a time. Autocomplete appears for strong surname matches.",
+    placeholder: "Try: Hemingway",
+    shareLabel: "Nobel Literature Sprint",
+    rows: LAUREATE_ROWS
+  }
+});
 const MIN_AUTOCOMPLETE_LASTNAME_LENGTH = 5;
 
-const rowsWithKeys = PRESIDENT_ROWS.map((row) => ({
-  ...row,
-  key: normalizeName(row.name)
-}));
-
-const people = buildPeople(rowsWithKeys);
-const aliasToKeys = buildAliasIndex(people);
+let activeMode = DEFAULT_GAME_MODE;
+let totalRows = 0;
+let rowsWithKeys = [];
+let people = new Map();
+let aliasToKeys = new Map();
 
 const state = {
   foundKeys: new Set(),
@@ -80,17 +223,58 @@ const elements = {
   feedback: document.getElementById("feedback"),
   progress: document.getElementById("progress-text"),
   timer: document.getElementById("timer-text"),
-  list: document.getElementById("president-rows"),
+  list: document.getElementById("game-rows"),
   resign: document.getElementById("resign-button"),
   share: document.getElementById("share-button"),
-  reset: document.getElementById("reset-button")
+  reset: document.getElementById("reset-button"),
+  modeSelect: document.getElementById("mode-select"),
+  gameTitle: document.getElementById("game-title"),
+  gameSubtitle: document.getElementById("game-subtitle")
 };
 
 const rowElementsByNumber = new Map();
 
-renderRows();
 bindEvents();
-startNewGame();
+setActiveMode(activeMode);
+
+function setActiveMode(nextMode) {
+  const config = GAME_CONFIG[nextMode];
+  if (!config) {
+    return;
+  }
+
+  activeMode = nextMode;
+  rowsWithKeys = config.rows.map((row) => ({
+    ...row,
+    key: normalizeName(row.name)
+  }));
+  totalRows = rowsWithKeys.length;
+  people = buildPeople(rowsWithKeys);
+  aliasToKeys = buildAliasIndex(people);
+
+  applyGameMeta(config);
+  renderRows();
+  startNewGame("Game started.");
+}
+
+function getActiveGameConfig() {
+  return GAME_CONFIG[activeMode];
+}
+
+function applyGameMeta(config) {
+  if (elements.modeSelect) {
+    elements.modeSelect.value = activeMode;
+  }
+  if (elements.gameTitle) {
+    elements.gameTitle.textContent = config.title;
+  }
+  if (elements.gameSubtitle) {
+    elements.gameSubtitle.textContent = config.subtitle;
+  }
+  if (elements.input) {
+    elements.input.placeholder = config.placeholder;
+  }
+}
 
 function bindEvents() {
   elements.form.addEventListener("submit", handleSubmit);
@@ -98,6 +282,11 @@ function bindEvents() {
   elements.resign.addEventListener("click", resignGame);
   elements.share.addEventListener("click", shareResult);
   elements.reset.addEventListener("click", resetGame);
+  if (elements.modeSelect) {
+    elements.modeSelect.addEventListener("change", () => {
+      setActiveMode(elements.modeSelect.value);
+    });
+  }
   document.addEventListener("click", (event) => {
     if (!elements.suggestions.contains(event.target) && event.target !== elements.input) {
       clearSuggestions();
@@ -107,6 +296,7 @@ function bindEvents() {
 
 function renderRows() {
   const fragment = document.createDocumentFragment();
+  rowElementsByNumber.clear();
 
   rowsWithKeys.forEach((row) => {
     const li = document.createElement("li");
@@ -135,7 +325,7 @@ function handleInput() {
   }
 
   const lastNameQuery = extractLastToken(normalizedInput);
-  if (lastNameQuery.length < MIN_AUTOCOMPLETE_LASTNAME_LENGTH) {
+  if (!shouldOfferAutocomplete(lastNameQuery)) {
     clearSuggestions();
     return;
   }
@@ -371,7 +561,7 @@ function renderSuggestions(candidates, lastNameQuery = "") {
   const currentLastNameQuery = extractLastToken(normalizeName(elements.input.value));
   if (
     !lastNameQuery ||
-    currentLastNameQuery.length < MIN_AUTOCOMPLETE_LASTNAME_LENGTH ||
+    !shouldOfferAutocomplete(currentLastNameQuery) ||
     currentLastNameQuery !== lastNameQuery
   ) {
     clearSuggestions();
@@ -439,7 +629,7 @@ function fillPresident(key) {
   const rowText = person.rows.length > 1 ? `rows ${person.rows.join(" and ")}` : `row ${person.rows[0]}`;
   setFeedback(`Filled ${rowText}: ${person.name}.`);
 
-  if (countFilledRows() === TOTAL_ROWS) {
+  if (countFilledRows() === totalRows) {
     endGame(GAME_STATUS.won);
     return true;
   }
@@ -498,12 +688,12 @@ function endGame(nextStatus) {
   const timeText = formatDuration(state.elapsedMs);
 
   if (nextStatus === GAME_STATUS.won) {
-    setFeedback(`All 47 filled in ${timeText}. Complete!`);
+    setFeedback(`All ${totalRows} filled in ${timeText}. Complete!`);
     return;
   }
 
   revealRemainingAnswers();
-  setFeedback(`You resigned at ${timeText} with ${filledRows}/${TOTAL_ROWS} rows filled.`);
+  setFeedback(`You resigned at ${timeText} with ${filledRows}/${totalRows} rows filled.`);
 }
 
 function revealRemainingAnswers() {
@@ -527,7 +717,7 @@ function revealRemainingAnswers() {
 
 function updateProgress() {
   const filledRows = countFilledRows();
-  elements.progress.textContent = `${filledRows} / ${TOTAL_ROWS} filled`;
+  elements.progress.textContent = `${filledRows} / ${totalRows} filled`;
 }
 
 function updateTimer() {
@@ -612,7 +802,7 @@ function buildShareText() {
     statusLabel = "resigned";
   }
 
-  return `US Presidents Sprint: ${filledRows}/${TOTAL_ROWS} in ${timeText} (${statusLabel}).`;
+  return `${getActiveGameConfig().shareLabel}: ${filledRows}/${totalRows} in ${timeText} (${statusLabel}).`;
 }
 
 function formatDuration(durationMs) {
@@ -714,6 +904,34 @@ function normalizeName(value) {
 function extractLastToken(value) {
   const tokens = value.split(" ");
   return tokens.at(-1) || "";
+}
+
+function shouldOfferAutocomplete(lastNameQuery) {
+  if (lastNameQuery.length >= MIN_AUTOCOMPLETE_LASTNAME_LENGTH) {
+    return true;
+  }
+
+  return hasExactShortLastNameMatch(lastNameQuery);
+}
+
+function hasExactShortLastNameMatch(lastNameQuery) {
+  if (lastNameQuery.length < 4) {
+    return false;
+  }
+
+  for (const person of people.values()) {
+    if (state.foundKeys.has(person.key)) {
+      continue;
+    }
+
+    for (const alias of person.aliases) {
+      if (extractLastToken(alias) === lastNameQuery) {
+        return true;
+      }
+    }
+  }
+
+  return false;
 }
 
 function autocompleteDistanceLimit(length) {
